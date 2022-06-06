@@ -4,44 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shear Studio</title>
-</head>
-
+    <link rel="stylesheet"  href="/css/style.css"/>
+    <script src="https://kit.fontawesome.com/303a5f21ac.js" crossorigin="anonymous"></script>
+    </head>
 <body>
     <header id="home">
-      <nav class="navbar">
-        <h1>Shear Studio</h1>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/stylist">Choose your stylist</a></li>
-            <li><a href="#add-event">Schedule Appointment</a></li>
-            <li><a href="/contact">Contact Us</a></li>
-        
-        </ul>
-      </nav>
-      <div class="welcome-event"></div>
-    </header>
-    <main>
-        <section id="events">
-            <h1 class="section-title">Appointment Type</h1>
-            <div class="events-container"></div>
+        <nav class="navbar">
+          <h1><a href="/">Shear Studio</a></h1>
+          <ul class="navflex">
+              <li><a href="/stylist">Choose your stylist</a></li>
+              <li><a href="/booking">Schedule Appointment</a></li>
+              <li><a href="/contact">Contact Us</a></li>
+          
+          </ul>
+        </nav>
+        <!-- <div class="welcome-event"></div> -->
+      </header>
+      <main class = "container">
+        <section class = "section">
+            <div class = "section-title"><br><center> WELCOME TO SHEAR STUDIO </center></br></div>
+
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn6.dissolve.com%2Fp%2FD145_133_298%2FD145_133_298_1200.jpg&f=1&nofb=1 "></img>
+
+          <br> Welcome to Shear Studio. After year of working together in different salons.  Brianne and Stacia decided to combine their talents to open Shear Studio together.  Shear Studio opened in 2016 combining their 40 plus years of combined experience. </br>
+
+          
         </section>
-        <section id="add-event">
-            <h1 class="section-title">Please Select Below</h1>
-            <form class="form">
-                <input type="text" id="name" placeholder="Name">
-                <input type="text" id="email" placeholder="email">
-                <textarea id="description" cols="30" rows="10" placeholder="Description..."></textarea>
-                <select id="status">
-                    <option value="0">Womens Cut</option>
-                    <option value="1">Womens Color</option>
-                    <option value="2">Womens Cut & Color</option>
-                    <option value="3">Mens Cut</option>
-                    <option value="4">Other</option>
-                </select>
-                <button class="btn btn-primary">Save</button>
-            </form>
-        </section>
-    </main>
-    </body>
-    </html>
+    </main>   
+    
+</body>
+</html>

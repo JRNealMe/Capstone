@@ -1,0 +1,86 @@
+<title>Schedule Appointment</title>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Schedule Appointment</title>
+  </head>
+  <body>
+    <header id="home">
+      <nav class="navbar">
+        <h1>Shear Studio</h1>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/stylist">Choose your stylist</a></li>
+          <li><a href="/booking">Schedule Appointment</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="welcome-event"></div>
+    </header>
+    <main>
+      <section id="events">
+        <h1 class="section-title">Appointment Type</h1>
+        <div class="events-container"></div>
+      </section>
+      <section id="add-event">
+        <h1 class="section-title">Please Select Below</h1>
+        <form id="form" class="form" action="/booking">
+          <input name="name" type="text" id="name" placeholder="Name" />
+          <input name="email" type="text" id="email" placeholder="email" />
+          <textarea
+            name="description"
+            id="description"
+            cols="30"
+            rows="10"
+            placeholder="Description..."
+          ></textarea>
+          <select id="stylist" name="stylist">
+            <option value="0">Stacia</option>
+            <option value="1">Brianne</option>
+          </select>
+          <select id="service" name="service">
+            <option value="0">Womens Cut</option>
+            <option value="1">Womens Color</option>
+            <option value="2">Womens Cut & Color</option>
+            <option value="4">Other</option>
+          </select>
+          <input type="datetime-local" id="datetime" name="datetime" />
+          <button class="btn btn-primary" type="submit">Save</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      var form = document.getElementById("form");
+
+      form.addEventListener("submit", (e) => {
+        console.log("test");
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        console.log(formData);
+
+        axios
+          .post(e.target.action, { 
+              name: form.name.value,
+              email: form.email.value,
+              description: form.description.value,
+              stylist: form.stylist.value,
+              service: form.service.value,
+              datetime: form.datetime.value,
+
+             })
+          .then((res) => {
+            console.log(res);
+            alert(res.data.response);
+          })
+          .catch(console.error);
+      });
+    </script>
+  </body>
+</html>
